@@ -1,8 +1,5 @@
+import View from './view'
 
-const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+const App = () => <View />
 
 export default App
