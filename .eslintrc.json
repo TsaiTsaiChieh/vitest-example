@@ -15,9 +15,12 @@
     "project": ["tsconfig.json"]
   },
   "plugins": [
-    "react"
+    "react",
+    "simple-import-sort"
   ],
   "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     "semi": 0, // 分號
     "react/react-in-jsx-scope": "off", // for missing 'import React' in files
     "@typescript-eslint/explicit-function-return-type": "off", // function 回傳無需標記回傳型態
