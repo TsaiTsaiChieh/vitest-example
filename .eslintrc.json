@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard-with-typescript"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["tsconfig.json"]
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "semi": 0, // 分號
+    "react/react-in-jsx-scope": "off", // for missing 'import React' in files
+    "@typescript-eslint/explicit-function-return-type": "off", // function 回傳無需標記回傳型態
+    "comma-dangle": "off", // 允許逗號可尾隨
+    "@typescript-eslint/comma-dangle": ["error", {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline"
+    }]
+  }
+}
