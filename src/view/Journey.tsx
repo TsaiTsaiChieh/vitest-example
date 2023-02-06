@@ -17,9 +17,9 @@ export const Journey = [
     element: <Component01 />,
   },
   {
-    name: '02 測試模組、Props',
+    name: '02 測試步驟、Props',
     path: '/02',
-    element: <Component02 />,
+    element: <Component02 content='Hello'/>,
   },
   {
     name: '03 mock function、fireEvent',
