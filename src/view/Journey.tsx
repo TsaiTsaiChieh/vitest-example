@@ -19,12 +19,19 @@ export const Journey = [
   {
     name: '02 測試步驟、Props',
     path: '/02',
-    element: <Component02 content='Hello'/>,
+    element: <Component02 content='Hello' />,
   },
   {
     name: '03 mock function、fireEvent',
     path: '/03',
-    element: <Component03 />,
+    element: (
+      <Component03
+        content='Click'
+        onClick={() => {
+          alert('Hi')
+        }}
+      />
+    ),
   },
   {
     name: '04 mock 時間、act',
