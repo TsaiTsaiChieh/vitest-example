@@ -7,7 +7,7 @@ describe('mock 時間、act', () => {
   test('fireEvent', () => {
     // https://vitest.dev/api/vi.html#vi-advancetimersbytime
     // Given
-    // vi.useFakeTimers()
+    vi.useFakeTimers()
     // When
     const { getByRole, getByText } = render(<Button04 />)
     const button = getByRole('button', { name: /^click me/i })
