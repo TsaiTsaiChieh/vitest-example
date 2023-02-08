@@ -32,6 +32,7 @@
         "imports": "always-multiline",
         "exports": "always-multiline",
         "functions": "always-multiline"
-    }]
+    }],
+    "@typescript-eslint/strict-boolean-expressions": "off" // 無需寫出完整判斷式
   }
 }
