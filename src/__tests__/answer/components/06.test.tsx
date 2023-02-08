@@ -40,3 +40,25 @@ describe('(First) Button with different types', () => {
     expect(button).toHaveClass(Clx.X)
   })
 })
+
+describe('(Rerender) Button with different types', () => {
+  test('Test all types', () => {
+    // Give
+    const Clx = {
+      [ButtonEnum.RED]: 'bg-red-500',
+      [ButtonEnum.GREEN]: 'bg-green-500',
+      [ButtonEnum.BLUE]: 'bg-blue-500',
+      X: 'bg-blue-500',
+    }
+
+    const { getByRole, rerender } = render(<Button06 type={ButtonEnum.RED}/>)
+    const button = getByRole('button', { name: /^Button$/i })
+    expect(button).toHaveClass(Clx[ButtonEnum.RED])
+    rerender(<Button06 type={ButtonEnum.GREEN}/>)
+    expect(button).toHaveClass(Clx[ButtonEnum.GREEN])
+    rerender(<Button06 type={ButtonEnum.BLUE}/>)
+    expect(button).toHaveClass(Clx[ButtonEnum.BLUE])
+    rerender(<Button06 type="X"/>)
+    expect(button).toHaveClass(Clx.X)
+  })
+})
