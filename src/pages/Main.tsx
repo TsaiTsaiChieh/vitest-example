@@ -1,4 +1,4 @@
-import { Sider } from '../components'
+import Sider from '../components/Sider'
 
 interface Props {
   child: React.ReactNode
