@@ -88,3 +88,17 @@ describe('(Each: Object) Button with different types', () => {
     expect(getByRole('button', { name: /^Button$/i })).toHaveClass(expected)
   })
 })
+
+describe('(Each: Table) Button with different types', () => {
+  const defaultClx = 'bg-blue-500'
+  test.each`
+    type                | expected
+    ${ButtonEnum.RED}   | ${'bg-red-500'}
+    ${ButtonEnum.GREEN} | ${'bg-green-500'}
+    ${ButtonEnum.BLUE}  | ${defaultClx}
+    ${'X'}              | ${defaultClx}
+  `('Button with type: $type', ({ type, expected }) => {
+    const { getByRole } = render(<Button06 type={type} />)
+    expect(getByRole('button', { name: /^Button$/i })).toHaveClass(expected)
+  })
+})
