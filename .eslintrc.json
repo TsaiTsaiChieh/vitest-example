@@ -8,7 +8,7 @@
     "plugin:react/recommended",
     "standard-with-typescript"
   ],
-  "ignorePatterns": ["vite.config.ts"],
+  "ignorePatterns": ["vite.config.ts", "vite-env.d.ts"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
