@@ -1,1 +1,1 @@
-type ButtonType = 'Red' | 'Green' | 'Blue'
+type ButtonType = 'Red' | 'Green' | 'Purple'

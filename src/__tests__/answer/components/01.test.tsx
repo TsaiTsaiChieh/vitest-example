@@ -16,7 +16,7 @@ test('快照', () => {
   expect(container).toMatchInlineSnapshot(`
     <div>
       <button
-        class="bg-green-500 text-white p-5 text-[30px] rounded-lg font-bold"
+        class="bg-red-500 text-white p-5 text-[30px] rounded-lg font-bold"
       >
         Hi
       </button>

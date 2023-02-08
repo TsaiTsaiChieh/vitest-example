@@ -12,7 +12,7 @@ const Button04 = () => {
     <div className='flex flex-col'>
       <button
         disabled={loading}
-        className='bg-red-500 text-white p-5 text-[30px] rounded-lg font-bold disabled:opacity-80'
+        className='bg-green-500 text-white p-5 text-[30px] rounded-lg font-bold disabled:opacity-80'
         onClick={handleOnClick}
       >
         Click Me

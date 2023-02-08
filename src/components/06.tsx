@@ -14,7 +14,7 @@ const Button06 = ({ type }: Props) => (
 )
 
 const getClx = (type?: string | ButtonType): string => {
-  const defaultClx = 'bg-blue-500'
+  const defaultClx = 'bg-purple-500'
   switch (type) {
     case ButtonEnum.RED:
       return 'bg-red-500'
