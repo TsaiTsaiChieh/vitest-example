@@ -17,7 +17,7 @@ const Button04 = () => {
       >
         Click Me
       </button>
-      {loading && <span className='font-base m-1'>Loading...</span>}
+      {loading && <span className='m-1'>Loading...</span>}
     </div>
   )
 }
