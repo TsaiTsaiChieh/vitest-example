@@ -7,8 +7,8 @@
     "dev": "vite --port 5100 --host 0.0.0.0",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test:watch": "vitest watch",
-    "test:ui": "vitest --ui",
+    "test:watch": "vitest --mode development watch",
+    "test:ui": "vitest --mode development --ui",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
