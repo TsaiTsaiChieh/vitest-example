@@ -17,7 +17,8 @@ const Button07 = () => {
       await getData()
       setLoading(false)
     } catch (error: any) {
-      setError(error)
+      // setError('error')
+      setError(error.response.data.detail)
     }
   }
   return (
@@ -30,9 +31,9 @@ const Button07 = () => {
         Get Data
       </button>
       <div className='mt-2'>
-        {loading
+        {!error && loading
           ? (
-          <span>Loading ...</span>
+          <span>Loading...</span>
             )
           : (
           <ul>
