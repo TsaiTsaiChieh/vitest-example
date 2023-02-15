@@ -5,7 +5,9 @@ import Button04 from '../components/04'
 import Button05 from '../components/05'
 import Button06 from '../components/06'
 import Button07 from '../components/07'
+import Button07_ from '../components/07-1'
 import Button08 from '../components/08'
+import Button08_ from '../components/08-1'
 import Button09 from '../components/09'
 
 export const Journey = [
@@ -52,9 +54,19 @@ export const Journey = [
     element: <Button07 />,
   },
   {
+    name: '07.1 mock api (RTK-Q)',
+    path: '/07_',
+    element: <Button07_ />,
+  },
+  {
     name: '08 react hook',
     path: '/08',
     element: <Button08 />,
+  },
+  {
+    name: '08.1 react hook (RTK-Q)',
+    path: '/08_',
+    element: <Button08_ />,
   },
   {
     name: '09 mock component、整合測試',
