@@ -6,15 +6,8 @@ export const api = createApi({
   endpoints: (builder) => ({
     getWeek: builder.query<GetWeekRes, void>({
       query: () => '/week',
-      transformErrorResponse: (
-        response: { status: string | number },
-        meta,
-        arg,
-      ) => response.status,
     }),
-
   }),
-
 })
 
 export const { useLazyGetWeekQuery } = api
