@@ -8,18 +8,10 @@ import userEvent from '@testing-library/user-event'
 import { rest } from 'msw'
 
 import Button07 from '../../../components/07'
-import { server } from '../../../mocks/server'
+import { server } from '../../../setupTests'
 
 const { VITE_APP_URL } = import.meta.env
-beforeAll(() => {
-  server.listen()
-})
-afterAll(() => {
-  server.close()
-})
-afterEach(() => {
-  server.resetHandlers()
-})
+
 describe('Test /week API', () => {
   test('API loading', async () => {
     // Given
@@ -79,10 +71,10 @@ describe('Test /week API', () => {
   test('API fail', async () => {
     // Given
     const errorMessage = 'SOMETHING_WRONG'
-    const user = userEvent.setup({ delay: null })
+    const user = userEvent.setup({ delay: 0 })
     server.use(
-      rest.get(`${VITE_APP_URL}/week`, (req, res, ctx) => {
-        return res(ctx.status(400), ctx.json({ detail: errorMessage }))
+      rest.get(`${VITE_APP_URL}/week`, (_req, res, ctx) => {
+        return res(ctx.status(400), ctx.json(errorMessage))
       }),
     )
     // When
@@ -91,6 +83,7 @@ describe('Test /week API', () => {
     // Then
     await user.click(button)
     expect(await findByText(errorMessage)).toBeInTheDocument()
+    // screen.debug()
     // is equals to
     // await waitFor(() => {
     //   expect(screen.getByText(errorMessage)).toBeInTheDocument()
