@@ -4,7 +4,6 @@ import { useLazyGetWeekQuery } from '../services/api'
 
 const Button07_ = () => {
   const [getWeek, { isLoading, error }] = useLazyGetWeekQuery()
-
   const [data, setData] = useState<string[]>([])
 
   const handleClick = async () => {
@@ -12,9 +11,6 @@ const Button07_ = () => {
       .unwrap()
       .then((result) => {
         setData(result.days)
-      })
-      .catch((error) => {
-        console.log(error)
       })
   }
   return (
@@ -37,7 +33,7 @@ const Button07_ = () => {
               data.map((ele: string) => <li key={ele}>{ele}</li>)}
           </ul>
             )}
-        {error && <span>{JSON.stringify(error)}</span>}
+        {error && <span>{error.data}</span>}
       </div>
     </div>
   )
