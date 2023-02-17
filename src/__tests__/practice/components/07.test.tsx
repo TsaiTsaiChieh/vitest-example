@@ -8,7 +8,7 @@ import userEvent from '@testing-library/user-event'
 import { rest } from 'msw'
 
 import Button07 from '../../../components/07'
-import { server } from '../../../mocks/server'
+import { server } from '../../../setupTests'
 
 describe('Test /week API', () => {
   test('API loading', async () => {
