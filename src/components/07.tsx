@@ -18,7 +18,7 @@ const Button07 = () => {
       setLoading(false)
     } catch (error: any) {
       // setError('error')
-      setError(error.response.data.detail)
+      setError(error.response.data)
     }
   }
   return (
