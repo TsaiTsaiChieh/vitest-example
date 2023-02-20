@@ -7,11 +7,19 @@ const Button07_ = () => {
   const [data, setData] = useState<string[]>([])
 
   const handleClick = async () => {
-    await getWeek()
-      .unwrap()
-      .then((result) => {
-        setData(result.days)
-      })
+    // await getWeek().unwrap().then((result) => {
+    //   setData(result.days)
+    // })
+    // failing to "catch" errors in a Promise chain could cause errors to propagate up to a higher-level error boundary component, which could break the application.
+    // recommended async/await with a try/catch block
+    try {
+      const result = await getWeek().unwrap()
+      if (result) setData(result.days)
+    } catch (error) {
+      if (import.meta.env.MODE === 'development') {
+        console.error(error)
+      }
+    }
   }
   return (
     <div className='flex flex-col'>
