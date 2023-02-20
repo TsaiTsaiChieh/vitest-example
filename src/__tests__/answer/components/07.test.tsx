@@ -25,7 +25,7 @@ describe('Test /week API', () => {
   })
   test('API success', async () => {
     // Given
-    const user = userEvent.setup({ delay: null })
+    const user = userEvent.setup({ delay: 0 })
     // When
     const { getByRole } = render(<Button07 />)
     const button = getByRole('button', { name: /^get data$/i })
