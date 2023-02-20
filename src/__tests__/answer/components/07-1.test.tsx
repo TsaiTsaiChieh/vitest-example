@@ -75,7 +75,7 @@ describe('Test /week API', () => {
     // screen.debug()
     // is equals to
     // await waitFor(() => {
-    //   expect(screen.getByText(errorMessage)).toThrow()
+    //   expect(screen.getByText(errorMessage)).toBeInTheDocument()
     // })
   })
 })
