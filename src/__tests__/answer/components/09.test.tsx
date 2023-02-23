@@ -1,4 +1,3 @@
-
 import { render, screen } from '@testing-library/react'
 
 import Page09 from '../../../pages/09'
@@ -8,20 +7,24 @@ vi.mock('../../../pages/09/Trade', () => ({ default: () => FakeComponent }))
 describe('mock component、整合測試', () => {
   test('Whole 09 Page', async () => {
     // When
-    const { getByRole, getByText } = render(<Page09/>)
+    const { getByRole, getByText } = render(<Page09 />)
     screen.debug()
     // Expect
-    expect(getByRole('heading', { name: /100 個木頭可以做什麼？/i })).toBeInTheDocument()
+    expect(
+      getByRole('heading', { name: /100 個木頭可以做什麼？/i }),
+    ).toBeInTheDocument()
     expect(getByRole('button', { name: /加點木頭/i })).toBeInTheDocument()
     // expect(getByRole('heading', { name: /50 個木頭拿去交易/i })).toBeInTheDocument()
     // expect(getByText(/賣完，得 \$400/i)).toBeInTheDocument()
     expect(getByText(FakeComponent)).toBeInTheDocument()
-    expect(getByRole('heading', { name: /50 個木頭拿去裝飾/i })).toBeInTheDocument()
+    expect(
+      getByRole('heading', { name: /50 個木頭拿去裝飾/i }),
+    ).toBeInTheDocument()
     expect(getByText(/拿去裝飾小花園的圍籬/i)).toBeInTheDocument()
   })
 
   test('screenshot', () => {
-    const { container } = render(<Page09/>)
+    const { container } = render(<Page09 />)
     expect(container).toMatchInlineSnapshot(`
       <div>
         <div
