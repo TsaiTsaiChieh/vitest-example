@@ -20,3 +20,5 @@ afterEach(() => { server.resetHandlers() })
 
 // Disable API mocking after the tests are done.
 afterAll(() => { server.close() })
+
+export const FakeComponent = 'FakeComponent'
