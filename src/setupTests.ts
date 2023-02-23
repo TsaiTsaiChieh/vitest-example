@@ -5,7 +5,7 @@ import { setupServer } from 'msw/node'
 
 import { handlers } from './mocks/handlers'
 
-// avoid CORS error in RTK-Query
+// testing code that's meant to run in a browser, so it relies on browser's globals like fetch or Headers or Request.
 global.fetch = fetch
 global.Headers = Headers
 global.Request = Request
