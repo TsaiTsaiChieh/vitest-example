@@ -8,7 +8,7 @@ import Button07 from '../components/07'
 import Button07_ from '../components/07-1'
 import Button08 from '../components/08'
 import Button08_ from '../components/08-1'
-import Button09 from '../components/09'
+import Page09 from '../pages/09'
 
 export const Journey = [
   {
@@ -71,6 +71,6 @@ export const Journey = [
   {
     name: '09 mock component、整合測試',
     path: '/09',
-    element: <Button09 />,
+    element: <Page09 />,
   },
 ]
