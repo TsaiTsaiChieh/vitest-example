@@ -8,7 +8,7 @@ describe('mock component、整合測試', () => {
   test('Whole 09 Page', async () => {
     // When
     const { getByRole, getByText } = render(<Page09 />)
-    screen.debug()
+    // screen.debug()
     // Expect
     expect(
       getByRole('heading', { name: /100 個木頭可以做什麼？/i }),
