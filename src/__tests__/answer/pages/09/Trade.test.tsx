@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import Trade from '../../../pages/09/Trade'
+import Trade from '../../../../pages/09/Trade'
 
 // Given
 const num = 1000
