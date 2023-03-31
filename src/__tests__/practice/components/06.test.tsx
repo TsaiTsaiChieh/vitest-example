@@ -14,7 +14,7 @@ describe('(First) Button with different types', () => {
     // When
     // Then
   })
-  test('Blue type', () => {
+  test('Purple type', () => {
     // When
     // Then
   })
