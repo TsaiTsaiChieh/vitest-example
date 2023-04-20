@@ -5,7 +5,9 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_APP_URL }),
   endpoints: (builder) => ({
     getWeek: builder.query<GetWeekRes, void>({
-      query: () => '/week',
+      query: () => {
+        return { url: '/week', method: 'GET' }
+      },
     }),
   }),
 })
