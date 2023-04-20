@@ -27,9 +27,10 @@ describe('Test /week API', () => {
     const button = getByRole('button', { name: /^get data$/i })
     await user.click(button)
     // Then
-    expect(getByRole('list')).toBeInTheDocument()
-    const { getAllByRole } = within(getByRole('list'))
-    const items = getAllByRole('listitem')
+    await waitFor(() => {
+      expect(getByRole('list')).toBeInTheDocument()
+    })
+    const items = within(getByRole('list')).getAllByRole('listitem')
     expect(items).toHaveLength(7)
     expect(items).toMatchInlineSnapshot(`
       [
@@ -72,7 +73,7 @@ describe('Test /week API', () => {
     // Then
     await user.click(button)
     expect(await findByText(errorMessage)).toBeInTheDocument()
-    // screen.debug()
+    screen.debug()
     // is equals to
     // await waitFor(() => {
     //   expect(screen.getByText(errorMessage)).toBeInTheDocument()
