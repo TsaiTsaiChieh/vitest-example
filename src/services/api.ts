@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi } from '@reduxjs/toolkit/query/react'
+
+import { customBaseQuery } from './customBaseQuery'
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_APP_URL }),
+  baseQuery: customBaseQuery,
   endpoints: (builder) => ({
     getWeek: builder.query<GetWeekRes, void>({
       query: () => {
