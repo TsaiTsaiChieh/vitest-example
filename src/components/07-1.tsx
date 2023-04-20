@@ -41,7 +41,7 @@ const Button07_ = () => {
               data.map((ele: string) => <li key={ele}>{ele}</li>)}
           </ul>
             )}
-        {error && <span>{error.data}</span>}
+        {error && <span>{(error as CustomError).data.error}</span>}
       </div>
     </div>
   )

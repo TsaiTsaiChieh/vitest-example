@@ -64,7 +64,7 @@ describe('Test /week API', () => {
     const user = userEvent.setup({ delay: 0 })
     server.use(
       rest.get(`${VITE_APP_URL}/week`, (_req, res, ctx) => {
-        return res(ctx.status(400), ctx.json(errorMessage))
+        return res(ctx.status(400), ctx.json({ error: errorMessage }))
       }),
     )
     // When
